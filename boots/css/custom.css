@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&family=Fjalla+One&display=swap');
+
+body{
+    font-family: 'Comic Neue', cursive;
+}
+#mapDiv{
+    background-image: url(/img/map.jpg);
+    /* background-size: cover; */
+background-position: center;
+    
+}
+
+
+td{
+    font-weight: bold;
+}
+h4{
+    font-weight: bolder;
+}
+.coDivDashBord{
+  padding-top: 13rem;
+}
+
+.coDivDashBordtxt{
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 10px;
+}

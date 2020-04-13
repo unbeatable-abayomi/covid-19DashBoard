@@ -87,8 +87,9 @@ function getcountryStats () {
             <div class="col-md-3">
                    <table class="table table-hover table-striped table-dark">
                    <thead class="text-secondary thead-light">
-                       <th scope="col"> ${stats.Country}</th>
-                     <th></th>
+                      
+                   <th  class="text-success" scope="col"> ${stats.Country}</th>
+                    <th></th>
                    </thead>
                    <tbody>
                      <tr>

@@ -33,27 +33,27 @@ function getGlobalStats(){
                  <tbody>
                    <tr>
                      <th scope="row">New Confrimed Cases:</th>
-                     <td> ${ globalStat.NewConfirmed}</td>
+                     <td> ${ globalStat.NewConfirmed.toLocaleString()}</td>
                    </tr>
                    <tr>
                      <th scope="row">Total Confirmed Cases:</th>
-                     <td> ${globalStat.TotalConfirmed}</td>
+                     <td> ${globalStat.TotalConfirmed.toLocaleString()}</td>
                    </tr>
                    <tr>
                      <th scope="row">New Deaths:</th>
-                     <td>${globalStat.NewDeaths} </td>
+                     <td>${globalStat.NewDeaths.toLocaleString()} </td>
                    </tr>
                    <tr class="text-danger">
                      <th scope="row">Total Deaths</th>
-                     <td>${globalStat.TotalDeaths}</td>
+                     <td>${globalStat.TotalDeaths.toLocaleString()}</td>
                    </tr>
                    <tr>
                      <th scope="row">New Recovered</th>
-                     <td> ${globalStat.NewRecovered}</td>
+                     <td> ${globalStat.NewRecovered.toLocaleString()}</td>
                    </tr>
                    <tr>
                    <th scope="row">Total Recovered</th>
-                   <td> ${globalStat.TotalRecovered}</td>
+                   <td> ${globalStat.TotalRecovered.toLocaleString()}</td>
                  </tr>
                   
                  </tbody>
@@ -94,27 +94,27 @@ function getcountryStats () {
                    <tbody>
                      <tr>
                        <th scope="row">New Cases</th>
-                       <td>${stats.NewConfirmed}</td>
+                       <td>${stats.NewConfirmed.toLocaleString()}</td>
                      </tr>
                      <tr>
                        <th scope="row">Total Cases</th>
-                       <td>${stats.TotalConfirmed}</td>
+                       <td>${stats.TotalConfirmed.toLocaleString()}</td>
                      </tr>
                      <tr>
                        <th scope="row">New Deaths</th>
-                       <td>${stats.NewDeaths}</td>
+                       <td>${stats.NewDeaths.toLocaleString()}</td>
                      </tr>
                      <tr class="text-danger">
                        <th scope="row">Total Deaths</th>
-                       <td>${stats.TotalDeaths}</td>
+                       <td>${stats.TotalDeaths.toLocaleString()}</td>
                      </tr>
                      <tr>
                        <th scope="row">New Recovered</th>
-                       <td>${stats.NewRecovered} </td>
+                       <td>${stats.NewRecovered.toLocaleString()} </td>
                      </tr>
                      <tr class="text-success">
                        <th scope="row">Total Recovered</th>
-                       <td>${stats.TotalRecovered}</td>
+                       <td>${stats.TotalRecovered.toLocaleString()}</td>
                      </tr>
                    </tbody>
                  </table>
@@ -148,19 +148,19 @@ function getNigeriaStats() {
                    <tbody>
                      <tr>
                        <th scope="row">Confirmed Cases</th>
-                       <td>${nigeriaStats.Confirmed}</td>
+                       <td>${nigeriaStats.Confirmed.toLocaleString()}</td>
                      </tr>
                      <tr>
                        <th scope="row">Active Cases</th>
-                       <td>${nigeriaStats.Active}</td>
+                       <td>${nigeriaStats.Active.toLocaleString()}</td>
                      </tr>
                      <tr>
                        <th scope="row">Recovered</th>
-                       <td>${nigeriaStats.Recovered} </td>
+                       <td>${nigeriaStats.Recovered.toLocaleString()} </td>
                      </tr>
                      <tr class="text-danger">
                        <th scope="row">Total Deaths</th>
-                       <td>${nigeriaStats.Deaths}</td>
+                       <td>${nigeriaStats.Deaths.toLocaleString()}</td>
                      </tr>
                      <tr>
                        <th scope="row">Date</th>

@@ -164,7 +164,7 @@ function getNigeriaStats() {
                      </tr>
                      <tr>
                        <th scope="row">Date</th>
-                       <td>${nigeriaStats.Date}</td>
+                       <td>${nigeriaStats.Date.slice(0,10)}</td>
                      </tr>
                     
                    </tbody>

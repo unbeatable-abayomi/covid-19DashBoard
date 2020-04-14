@@ -34,3 +34,36 @@ h4{
     font-family: 'Fjalla One', sans-serif; 
     letter-spacing: 2px;
 }
+
+
+#countryStatsDiv{
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+    background-color: aliceblue;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+   
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(66, 66, 66); 
+    border-radius: 8px;
+    height: 70px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #615f5f; 
+  }
+

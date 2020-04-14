@@ -24,10 +24,10 @@ function getGlobalStats(){
         let globalStat = data.Global;
             getGlobalStatsText  += ` 
             <h4 class="text-white">Global Statistics</h4>                     
-                 <table class="table table-hover table-striped table-dark">
+                 <table class="table table-hover table-striped table-light">
                  <thead class="text-secondary thead-light">
                      <th  class="text-success" scope="col">Global Statistics</th>
-                     <th scope="col"></th>
+                    
                    </tr>
                  </thead>
                  <tbody>
@@ -82,49 +82,91 @@ function getcountryStats () {
     .then(function(data){
         let getcountryStatsText = "";
         console.log(data);
+        // let stata = stats;
         data.Countries.forEach(function(stats){
-            getcountryStatsText  += `
-            <div class="col-md-3">
-                   <table class="table table-hover table-striped table-dark">
-                   <thead class="text-secondary thead-light">
-                      
-                   <th  class="text-success" scope="col"> ${stats.Country}</th>
-                    <th></th>
-                   </thead>
-                   <tbody>
-                     <tr>
-                       <th scope="row">New Cases</th>
-                       <td>${stats.NewConfirmed.toLocaleString()}</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">Total Cases</th>
-                       <td>${stats.TotalConfirmed.toLocaleString()}</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">New Deaths</th>
-                       <td>${stats.NewDeaths.toLocaleString()}</td>
-                     </tr>
-                     <tr class="text-danger">
-                       <th scope="row">Total Deaths</th>
-                       <td>${stats.TotalDeaths.toLocaleString()}</td>
-                     </tr>
-                     <tr>
-                       <th scope="row">New Recovered</th>
-                       <td>${stats.NewRecovered.toLocaleString()} </td>
-                     </tr>
-                     <tr class="text-success">
-                       <th scope="row">Total Recovered</th>
-                       <td>${stats.TotalRecovered.toLocaleString()}</td>
-                     </tr>
-                   </tbody>
-                 </table>
-                 </div>
+        //    getCountryDetails(stats);
+            getcountryStatsText  += `   
+            <table class="table table-light">
+            <thead>
+        
+            </thead>
+            <tbody >
+              <tr class="table-body">
+              <th  scope="row" class="text-secondary" data-TotalRecoverd="${stats.TotalRecovered.toLocaleString()}" data-Recovered="${stats.NewRecovered.toLocaleString()}" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)" scope="col"> ${stats.Country}</th>
+
+              <td><span class="data-perCountry" data-TotalRecoverd="${stats.TotalRecovered.toLocaleString()}" data-Recovered="${stats.NewRecovered.toLocaleString()}" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)" >${stats.TotalConfirmed.toLocaleString()}</span></td>
+              
+              </tr>
+             
+             
+            </tbody>
+          </table>
+                 
             `;
         });
         document.getElementById('countryStatsDiv').innerHTML = getcountryStatsText;
     })
 
 };
+
+function getCountryDetails(details){
+    document.getElementById('eachCountryTotalStats').style.display = "block";
+ let newDeaths = details.getAttribute("data-newDeaths");
+ let totalDeaths = details.getAttribute("data-TotalDeaths");
+ let country = details.getAttribute("data-Country");
+ let newCases = details.getAttribute("data-NewCases");
+ let totalCases = details.getAttribute("data-TotalCases"); 
+ let newRecovered = details.getAttribute("data-Recovered"); 
+ let totalRecovered = details.getAttribute("data-TotalRecoverd"); 
+  console.log(newDeaths,totalDeaths,country,newCases,totalCases);
+ 
+  let eachCountryDetails = "";
+  eachCountryDetails +=`
+<table class="table table-hover table-striped table-light">
+<thead class="text-secondary thead-light">
+   
+<th  class="text-success" scope="col"> <h4>${country}</h4></th>
+ <td><i onClick="closeModalBox()" class="fas fa-window-close"></i></td>
+</thead>
+<tbody>
+<th scope="row">New Deaths</th>
+    <td>${newDeaths}</td>
+  </tr>
+  <tr class="text-danger">
+    <th scope="row">Total Deaths</th>
+    <td>${totalDeaths}</td>
+  </tr>
+    <th scope="row">New Cases</th>
+    <td>${newCases}</td>
+  </tr>
+  <tr class="text-danger">
+    <th scope="row">Total Cases</th>
+    <td>${totalCases}</td>
+  </tr>
+  </tr>
+    <th scope="row">New Recovered</th>
+    <td>${newRecovered}</td>
+  </tr>
+  <tr class="text-success">
+    <th scope="row">Total Recovered</th>
+    <td>${totalRecovered}</td>
+  </tr>
+  
+</tbody>
+
+</table>
+
+`;
+    
+document.getElementById('eachCountryTotalStats').innerHTML = eachCountryDetails;
+  
+  
+ 
+}
+
+ closeModalBox =()=>{
+    document.getElementById('eachCountryTotalStats').style.display = "none"; 
+ }
 
 function getNigeriaStats() {
     
@@ -139,7 +181,7 @@ function getNigeriaStats() {
         let nigeriaStats = data[0];
         getNigeriaStatsText += `
         <h4 class="text-light">Nigeria Statistics</h4>
-                 <table class="table table-hover table-striped table-dark">
+                 <table class="table table-hover table-striped table-light">
                    <thead class="thead-light">
                        <th class="text-success" scope="col">Country</th>
                        <th class="text-success" scope="col">${nigeriaStats.Country}</th>

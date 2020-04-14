@@ -1,0 +1,44 @@
+let eachCountryDetails = "";
+eachCountryDetails +=`
+<table class="table table-hover table-striped table-dark">
+<thead class="text-secondary thead-light">
+   
+<th  class="text-success" scope="col"> ${details.Country}</th>
+ <th></th>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">New Cases</th>
+    <td>${details.NewConfirmed.toLocaleString()}</td>
+  </tr>
+  <tr>
+    <th scope="row" onClick="getCountryDetails()">Total Cases</th>
+    <td>${details.TotalConfirmed.toLocaleString()}</td>
+  </tr>
+  <tr>
+    <th scope="row">New Deaths</th>
+    <td>${details.NewDeaths.toLocaleString()}</td>
+  </tr>
+  <tr class="text-danger">
+    <th scope="row">Total Deaths</th>
+    <td>${details.TotalDeaths.toLocaleString()}</td>
+  </tr>
+  <tr>
+    <th scope="row">New Recovered</th>
+    <td>${details.NewRecovered.toLocaleString()} </td>
+  </tr>
+  <tr class="text-success">
+    <th scope="row">Total Recovered</th>
+    <td>${details.TotalRecovered.toLocaleString()}</td>
+  </tr>
+</tbody>
+</table>
+
+`;
+
+
+
+<th scope="row" class="text-success" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)" scope="col"> ${stats.Country}</th>
+<td >${stats.TotalConfirmed.toLocaleString()}</td>
+
+document.getElementById('eachCountryTotalStats').innerHTML = eachCountryDetails;

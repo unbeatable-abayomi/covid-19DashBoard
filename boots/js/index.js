@@ -91,10 +91,10 @@ function getcountryStats () {
         
             </thead>
             <tbody >
-              <tr class="table-body data-TotalRecoverd="${stats.TotalRecovered.toLocaleString()}" data-Recovered="${stats.NewRecovered.toLocaleString()}" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)">
-              <th  scope="row" class="text-secondary" data-TotalRecoverd="${stats.TotalRecovered.toLocaleString()}" data-Recovered="${stats.NewRecovered.toLocaleString()}" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)" scope="col"> ${stats.Country}</th>
+              <tr class="table-body" data-TotalRecoverd="${stats.TotalRecovered}" data-Recovered="${stats.NewRecovered.toLocaleString()}" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)">
+              <th  scope="row" scope="col"> ${stats.Country}</th>
 
-              <td><span class="data-perCountry" data-TotalRecoverd="${stats.TotalRecovered.toLocaleString()}" data-Recovered="${stats.NewRecovered.toLocaleString()}" data-NewCases="${stats.NewConfirmed.toLocaleString()}" data-TotalCases="${stats.TotalConfirmed.toLocaleString()}" data-Country="${stats.Country}" data-newDeaths="${stats.NewDeaths.toLocaleString()}" data-TotalDeaths="${stats.TotalDeaths.toLocaleString()}" onClick="getCountryDetails(this)" >${stats.TotalConfirmed.toLocaleString()}</span></td>
+              <td><span>${stats.TotalConfirmed.toLocaleString()}</span></td>
               
               </tr>
              
@@ -118,7 +118,7 @@ function getCountryDetails(details){
  let totalCases = details.getAttribute("data-TotalCases"); 
  let newRecovered = details.getAttribute("data-Recovered"); 
  let totalRecovered = details.getAttribute("data-TotalRecoverd"); 
-  console.log(newDeaths,totalDeaths,country,newCases,totalCases);
+  console.log(newRecovered,totalRecovered, details);
  
   let eachCountryDetails = "";
   eachCountryDetails +=`

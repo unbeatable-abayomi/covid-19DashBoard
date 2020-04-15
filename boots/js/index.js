@@ -126,7 +126,7 @@ function getCountryDetails(details){
 <thead class="text-secondary thead-light">
    
 <th  class="text-success" scope="col"> <h4>${country}</h4></th>
- <td><i onClick="closeModalBox()" class="fas fa-window-close"></i></td>
+ <td><i id="closeWindow" onClick="closeModalBox()" class="fas fa-window-close"></i></td>
 </thead>
 <tbody>
 <th scope="row">New Deaths</th>
@@ -163,10 +163,29 @@ document.getElementById('eachCountryTotalStats').innerHTML = eachCountryDetails;
   
  
 }
-
+// $(".table-body").click(function (){
+//     $("#eachCountryTotalStats").css("display", "block");
+// })
  closeModalBox =()=>{
     document.getElementById('eachCountryTotalStats').style.display = "none"; 
  }
+
+
+
+ 
+//    $("#closeWindow").click(function (){
+//         $("#eachCountryTotalStats").hide("slow")
+//   })
+//   $(".fa-window-close").click(function (){
+//     $("#eachCountryTotalStats").fadeOut("slow")
+// })
+
+// $("#closeWindow").click(function (){
+//     $(this).hide("slow")
+// })
+// $("#btnHideBlue").click(function (){
+//     $("p.blue").hide("slow")
+// })
 
 function getNigeriaStats() {
     
